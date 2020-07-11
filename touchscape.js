@@ -26,7 +26,7 @@ var x = 100,
   py = [],
   pA = [];
   angle1 = 0.0,
-  dragLength = 80;
+  dragLength = 50;
 
 var r = 0;
 var qtyOfLines = 40;
@@ -236,8 +236,11 @@ function makeArray(x, y, x2, y2, angle) {
   a.sub(b);
 
   for (var i = 0; i < qtyOfLines; i++) {
-    d = p5.Vector.lerp(a, c, i/qtyOfLines);
+    // cool
+        // d = p5.Vector.lerp(a, c, (i/qtyOfLines)*random(0,1));
+    d = p5.Vector.lerp(a, c, (i/qtyOfLines)+random(0,(1/qtyOfLines)*0.2));
     point(d.x, d.y);
+
     vec[i].push(d);
   }
 }
@@ -246,8 +249,15 @@ function display() {
   var bool = 0;
   if (vec[0].length > 1){
     for (var i = 0; i < vec.length; i++) {
+
+      if (i === 0 || i === vec.length-1){
+         fg.strokeWeight(strokeW/2.5);
+      } else {
+         fg.strokeWeight(strokeW);
+      }
+
     var n = vec[i];
-    fg.stroke(255*bool, 200);
+    fg.stroke(255*bool, 160);
     bool = !bool
       fg.line(n[n.length-1].x, n[n.length-1].y, n[n.length-2].x, n[n.length-2].y);
   }

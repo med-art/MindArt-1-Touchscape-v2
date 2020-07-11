@@ -128,12 +128,12 @@ function rake1() {
   click.play();
 }
 function rake2() {
-  change(3,60,100);
+  change(4,60,100);
   selector.position(vMax * 11, windowHeight - vMax * 13);
   click.play();
 }
 function rake3() {
-  change(7,100,100);
+  change(10,100,100);
   selector.position(vMax * 22, windowHeight - vMax * 13);
   click.play();
 }
