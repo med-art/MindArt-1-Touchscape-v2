@@ -128,17 +128,17 @@ function rake1() {
   click.play();
 }
 function rake2() {
-  change(4,60,100);
+  change(5,60,100);
   selector.position(vMax * 11, windowHeight - vMax * 13);
   click.play();
 }
 function rake3() {
-  change(10,100,100);
+  change(15,100,100);
   selector.position(vMax * 22, windowHeight - vMax * 13);
   click.play();
 }
 function rake4() {
-  change(50,150,100);
+  change(60,150,100);
   selector.position(vMax * 33, windowHeight - vMax * 13);
   click.play();
 }

@@ -26,7 +26,7 @@ var x = 100,
   py = [],
   pA = [];
   angle1 = 0.0,
-  dragLength = 50;
+  dragLength = 30;
 
 var r = 0;
 var qtyOfLines = 40;
@@ -238,7 +238,7 @@ function makeArray(x, y, x2, y2, angle) {
   for (var i = 0; i < qtyOfLines; i++) {
     // cool
         // d = p5.Vector.lerp(a, c, (i/qtyOfLines)*random(0,1));
-    d = p5.Vector.lerp(a, c, (i/qtyOfLines)+random(0,(1/qtyOfLines)*0.2));
+    d = p5.Vector.lerp(a, c, (i/(qtyOfLines+1))+random(0,(1/qtyOfLines)*0.2));
     point(d.x, d.y);
 
     vec[i].push(d);
@@ -249,24 +249,33 @@ function display() {
   var bool = 0;
   if (vec[0].length > 1){
     for (var i = 0; i < vec.length; i++) {
-
-      if (i === 0 || i === vec.length-1){
-         fg.strokeWeight(strokeW/2.5);
+      if (i === 0 || i === vec.length-1 || (i % 3) === 2){  // if first line, last line or every 3rd line, then thin, else fat
+         fg.strokeWeight(strokeW/2);
       } else {
          fg.strokeWeight(strokeW);
       }
 
     var n = vec[i];
-    fg.stroke(255*bool, 160);
-    bool = !bool
+    if (i % 3 === 0){
+          fg.stroke(40);
+    } else if (i % 3 === 1){
+            fg.stroke(200);
+      } else if (i % 3 === 2){
+              fg.stroke(0);
+        }
+
+
+    bool++;
       fg.line(n[n.length-1].x, n[n.length-1].y, n[n.length-2].x, n[n.length-2].y);
   }
 }
  blendMode(BLEND);
   image(background, 0, 0, width, height);
   blendMode(OVERLAY);
+
   image(fg, 0, 0, width, height);
    blendMode(BLEND);
+   noTint();
   image(pLayer, 0, 0, width, height);
 }
 
