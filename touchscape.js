@@ -11,7 +11,7 @@ let vMax, selector;
 let introText = ["Touch and Listen", "Look", "Draw"];
 let appCol = "#469ede"; // 70, 158, 222
 let slide = 4; // current app is starting at 4 to prevent any behaviour before first button press.
-let delayTime = 1200; // this is the for each slide change
+let delayTime = 12000; // this is the for each slide change
 let introComplete = 0;
 
 //DATA
