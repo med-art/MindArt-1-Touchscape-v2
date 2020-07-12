@@ -123,22 +123,26 @@ function fs() {
 }
 
 function rake1() {
-  change(200,200,1);
+  change(1,200,1);
+  eraseActive = 1;
   selector.position(0, windowHeight - vMax * 13);
   click.play();
 }
 function rake2() {
   change(5,60,100);
+    eraseActive = 0;
   selector.position(vMax * 11, windowHeight - vMax * 13);
   click.play();
 }
 function rake3() {
   change(15,100,100);
+    eraseActive = 0;
   selector.position(vMax * 22, windowHeight - vMax * 13);
   click.play();
 }
 function rake4() {
   change(60,150,100);
+    eraseActive = 0;
   selector.position(vMax * 33, windowHeight - vMax * 13);
   click.play();
 }

@@ -264,9 +264,18 @@ function display() {
               fg.stroke(0);
         }
 
+    if (eraseActive){
+      fg.noStroke();
+      fg.fill(127,80);
+    fg.ellipse(mouseX,mouseY,width/8,width/8);
+    }
+
+    else {
+
 
     bool++;
       fg.line(n[n.length-1].x, n[n.length-1].y, n[n.length-2].x, n[n.length-2].y);
+    }
   }
 }
  blendMode(BLEND);
