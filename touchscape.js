@@ -267,7 +267,7 @@ function display() {
     if (eraseActive){
       fg.noStroke();
       fg.fill(127,80);
-    fg.ellipse(mouseX,mouseY,vmax*10,vmax*10);
+    fg.ellipse(mouseX,mouseY,vMax*13,vMax*13);
     }
 
     else {
